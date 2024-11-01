@@ -30,7 +30,10 @@ const App = () => {
   };
 
   const handleRemoveIngredient = (ingredient) => {
-    setStack(stack.filter((item) => item !== ingredient));
+    const ingredientToRemove = stack.lastIndexOf(ingredient);
+    stack.splice(ingredientToRemove, 1);
+    const newStack = [...stack];
+    setStack(newStack);
   };
 
   return (
